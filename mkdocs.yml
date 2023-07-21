@@ -7,4 +7,9 @@ nav:
         Azure: 
             Compute Resources:
                 Azure Containers: learning/azure/compute_resources/azure_containers.md
-
+            Virtual Networking:
+                  CIDR Notation: learning/azure/virtual_networking/cidr_notation.md
+    - Programming:
+        Design Patterns:
+            Creational Design Patterns:
+                Singleton: programming/design_patterns/creational_design_patterns/singleton.md

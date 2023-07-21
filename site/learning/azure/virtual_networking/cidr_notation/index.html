@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/compute_resources/azure_containers/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/cidr_notation/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Azure Containers - PyCloudWorld</title>
+        <title>CIDR Notation - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -52,7 +52,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="./" class="dropdown-item active">Azure Containers</a>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
 </li>
     </ul>
   </li>
@@ -62,7 +62,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../virtual_networking/cidr_notation/" class="dropdown-item">CIDR Notation</a>
+    <a href="./" class="dropdown-item active">CIDR Notation</a>
 </li>
     </ul>
   </li>
@@ -100,12 +100,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../../.." class="nav-link">
+                                <a rel="prev" href="../../compute_resources/azure_containers/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../virtual_networking/cidr_notation/" class="nav-link">
+                                <a rel="next" href="../../../../programming/design_patterns/creational_design_patterns/singleton/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -127,21 +127,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#azure-container" class="nav-link">Azure Container</a>
+            <li class="nav-item" data-level="1"><a href="#cidr-notation" class="nav-link">CIDR Notation</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#commands-to-install-on-ubuntu" class="nav-link">Commands to install on ubuntu</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#docker-command-explanation" class="nav-link">Docker command explanation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#azure-container-registry" class="nav-link">Azure Container Registry</a>
-              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -149,48 +140,16 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="azure-container">Azure Container</h1>
-<p><img alt="docker" src="../docker.PNG" /></p>
+<h1 id="cidr-notation">CIDR Notation</h1>
 <h2 id="commands-to-install-on-ubuntu">Commands to install on ubuntu</h2>
-<p>Update the package index</p>
-<pre><code class="language-bash">sudo apt-get update
-</code></pre>
-<p>Install packages to allow apt to use the repository over HTTPS</p>
-<pre><code class="language-bash">sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-</code></pre>
-<p>Add Docker's official GPG key</p>
-<pre><code class="language-bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-</code></pre>
-<p>Setup a stable repository</p>
-<pre><code class="language-bash">echo \
-  &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
-</code></pre>
-<p>Update the package index</p>
-<pre><code class="language-bash">sudo apt-get update
-</code></pre>
-<p>Install docker, containerd</p>
-<pre><code class="language-bash"> sudo apt-get install docker-ce docker-ce-cli containerd.io
-</code></pre>
-<p>Launching a container</p>
-<pre><code class="language-bash">sudo docker run --name mynginx -p 80:80 -d nginx
-</code></pre>
-<h2 id="docker-command-explanation">Docker command explanation</h2>
-<pre><code class="language-bash">sudo docker run --name mynginx -p 80:80 -d nginx
-</code></pre>
 <ul>
 <li><code>nginx</code>   : docker image name</li>
 <li><code>mynginx</code> : name of the container</li>
 <li><code>80:80</code> : port that needs to be mapped</li>
 </ul>
-<h1 id="azure-container-registry">Azure Container Registry</h1>
-<p>this is the place where we save our images for the organisation. this will be a private repo to save the container images.</p>
-<p><img alt="azure_container_registry" src="../container_registry_in_azure.PNG" /></p>
-<p><img alt="azure_container_registry_form" src="../azure_container_registry_form.PNG" /></p></div>
+<p>Update the package index</p>
+<pre><code class="language-bash">sudo apt-get update
+</code></pre></div>
             </div>
         </div>
 

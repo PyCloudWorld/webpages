@@ -10,4 +10,14 @@
          <lastmod>2023-07-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/cidr_notation/</loc>
+         <lastmod>2023-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_design_patterns/singleton/</loc>
+         <lastmod>2023-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
