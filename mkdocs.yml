@@ -6,6 +6,5 @@ nav:
     - Learning: 
         Azure: 
             Compute Resources:
-                Azure Containers:
-                    Azure Image Registry : learning/azure/compute_resources/azure_containers/azure_image_registry/need_for_an_image_registry.md
+                Azure Containers: learning/azure/compute_resources/azure_containers.md
 
