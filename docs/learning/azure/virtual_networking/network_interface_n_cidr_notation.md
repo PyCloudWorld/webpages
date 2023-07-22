@@ -1,5 +1,10 @@
 # Network Interface & CIDR Notation
 
+## <hr/> CIDR fullform
+* `C` - Classless
+* `ID` - Inter-Domain
+* `R` - Routing
+
 ## <hr/>Network Interface
 ![basic_concept](images/network_interface_n_cidr_notation/basic_concept.PNG)
 
