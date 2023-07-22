@@ -13,6 +13,7 @@ nav:
         Design Patterns:
             Creational Design Patterns:
                 Singleton: programming/design_patterns/creational_design_patterns/singleton.md
+                Builder: programming/design_patterns/creational_design_patterns/builder.md
             Structural Patterns:
                 Proxy: programming/design_patterns/structural_patterns/proxy.md
 
