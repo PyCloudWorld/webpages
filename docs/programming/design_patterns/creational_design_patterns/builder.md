@@ -1,5 +1,5 @@
 # Builder
-![builder_1](builder_1.PNG)
+![builder_1](images/builder_1.PNG)
 
 ## CODE
 ```python
