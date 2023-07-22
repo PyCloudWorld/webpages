@@ -155,6 +155,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#convert-ip-number-to-8-bit" class="nav-link">convert IP number to 8 bit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#ip-masking" class="nav-link">IP &amp; Masking</a>
               <ul class="nav flex-column">
               </ul>
@@ -193,6 +197,23 @@
 <p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_1.PNG" /></p>
 <h2 id="ip-basic-concept_1"><hr/>IP basic concept</h2>
 <p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_2.PNG" /></p>
+<h2 id="convert-ip-number-to-8-bit">convert IP number to 8 bit</h2>
+<p>example:
+192.0.2.0</br></p>
+<pre>
+`192 is less than 256 and greater than 128`
+    :   256   128  64    32    16    8     4    2
+    :   0     1    0     0     0     0     0    0
+</pre>
+<p><code>192- 128 = 64</code></p>
+<pre>
+    :   256   128  64    32    16    8     4    2
+    :   0     1    0     0     0     0     0    0  
+    :   0     1    1     0     0     0     0    0
+</pre>
+<pre><code>
+</code></pre>
+<p>so 192 is 01100000</p>
 <h2 id="ip-masking"><hr/>IP &amp; Masking</h2>
 <p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_3.PNG" /></p>
 <h2 id="ip-number-of-host-available"><hr/>IP Number of host available</h2>
