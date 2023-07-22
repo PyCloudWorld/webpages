@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/cidr_notation/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/network_interface_n_cidr_notation/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
         <title>CIDR Notation - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
@@ -141,9 +141,41 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#cidr-notation" class="nav-link">CIDR Notation</a>
+            <li class="nav-item" data-level="1"><a href="#network-interface-cidr-notation" class="nav-link">Network Interface &amp; CIDR Notation</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands-to-install-on-ubuntu" class="nav-link">Commands to install on ubuntu</a>
+            <li class="nav-item" data-level="2"><a href="#network-interface" class="nav-link">Network Interface</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-basic-concept" class="nav-link">IP basic concept</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-basic-concept_1" class="nav-link">IP basic concept</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-masking" class="nav-link">IP &amp; Masking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-number-of-host-available" class="nav-link">IP Number of host available</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-masking-shorthand" class="nav-link">IP masking shorthand</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-host-count" class="nav-link">IP host count</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ip-having-multiple-subnet" class="nav-link">IP having multiple Subnet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#multiple-interface-on-same-vm-or-server" class="nav-link">Multiple interface on same VM or Server</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -154,16 +186,25 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="cidr-notation">CIDR Notation</h1>
-<h2 id="commands-to-install-on-ubuntu">Commands to install on ubuntu</h2>
-<ul>
-<li><code>nginx</code>   : docker image name</li>
-<li><code>mynginx</code> : name of the container</li>
-<li><code>80:80</code> : port that needs to be mapped</li>
-</ul>
-<p>Update the package index</p>
-<pre><code class="language-bash">sudo apt-get update
-</code></pre></div>
+<h1 id="network-interface-cidr-notation">Network Interface &amp; CIDR Notation</h1>
+<h2 id="network-interface"><hr/>Network Interface</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/basic_concept.PNG" /></p>
+<h2 id="ip-basic-concept"><hr/>IP basic concept</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_1.PNG" /></p>
+<h2 id="ip-basic-concept_1"><hr/>IP basic concept</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_2.PNG" /></p>
+<h2 id="ip-masking"><hr/>IP &amp; Masking</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_3.PNG" /></p>
+<h2 id="ip-number-of-host-available"><hr/>IP Number of host available</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_4.PNG" /></p>
+<h2 id="ip-masking-shorthand"><hr/>IP masking shorthand</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_5.PNG" /></p>
+<h2 id="ip-host-count"><hr/>IP host count</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_6.PNG" /></p>
+<h2 id="ip-having-multiple-subnet"><hr/>IP having multiple Subnet</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_7.PNG" /></p>
+<h2 id="multiple-interface-on-same-vm-or-server"><hr/>Multiple interface on same VM or Server</h2>
+<p><img alt="basic_concept" src="../images/network_interface_n_cidr_notation/ip_8.PNG" /></p></div>
             </div>
         </div>
 
