@@ -4,26 +4,26 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>PyCloudWorld</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/virtual_network/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Virtual Network - PyCloudWorld</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">PyCloudWorld</a>
+                <a class="navbar-brand" href="../../../..">PyCloudWorld</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,11 +33,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="about.md" class="nav-link">About</a>
+                                <a href="../../../../about.md" class="nav-link">About</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learning <b class="caret"></b></a>
@@ -52,7 +52,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="learning/azure/compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
 </li>
     </ul>
   </li>
@@ -62,7 +62,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="learning/azure/virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+    <a href="../network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
 </li>
     </ul>
   </li>
@@ -83,11 +83,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="programming/design_patterns/creational_design_patterns/singleton/" class="dropdown-item">Singleton</a>
+    <a href="../../../../programming/design_patterns/creational_design_patterns/singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="programming/design_patterns/creational_design_patterns/builder/" class="dropdown-item">Builder</a>
+    <a href="../../../../programming/design_patterns/creational_design_patterns/builder/" class="dropdown-item">Builder</a>
 </li>
     </ul>
   </li>
@@ -97,7 +97,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+    <a href="../../../../programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -113,16 +113,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="learning/azure/compute_resources/azure_containers/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -141,9 +131,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#welcome-to-pycloudworld" class="nav-link">Welcome to PyCloudWorld</a>
+            <li class="nav-item" data-level="1"><a href="#virtual-network" class="nav-link">Virtual Network</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-level="2"><a href="#cidr-fullform" class="nav-link"> CIDR fullform</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#virtual-network-can-have-many-address-space-and-subnets" class="nav-link">Virtual Network can have many Address Space and Subnets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cost-of-ip-addresses" class="nav-link">Cost of IP Addresses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-public-ip-address" class="nav-link">Create public IP address</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#attaching-the-public-ip-address-to-the-vm" class="nav-link"> attaching the public IP address to the VM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#attaching-addition-network-interface-to-the-vm" class="nav-link">Attaching addition Network Interface to the VM</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -154,14 +164,48 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-pycloudworld">Welcome to PyCloudWorld</h1>
-<h2 id="commands">Commands</h2>
+<h1 id="virtual-network">Virtual Network</h1>
+<h2 id="cidr-fullform"><hr/> CIDR fullform</h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul></div>
+<li><code>C</code> - Classless</li>
+<li><code>ID</code> - Inter-Domain</li>
+<li><code>R</code> - Routing</li>
+</ul>
+<h2 id="virtual-network-can-have-many-address-space-and-subnets"><hr/>Virtual Network can have many Address Space and Subnets</h2>
+<p><img alt="vnet_1" src="../images/virtual_network/vnet_1.PNG" /></p>
+<p><br/></p>
+<p><img alt="vnet_2" src="../images/virtual_network/vnet_2.PNG" /></p>
+<p><br/></p>
+<p><img alt="vnet_3" src="../images/virtual_network/vnet_3.PNG" /></p>
+<p><br/></p>
+<p><img alt="vnet_4" src="../images/virtual_network/vnet_4.PNG" /></p>
+<h2 id="cost-of-ip-addresses"><hr/>Cost of IP Addresses</h2>
+<p>https://azure.microsoft.com/en-us/pricing/details/ip-addresses/</p>
+<p><img alt="vnet_5" src="../images/virtual_network/vnet_5.PNG" /></p>
+<h2 id="create-public-ip-address"><hr/>Create public IP address</h2>
+<p><img alt="vnet_6" src="../images/virtual_network/vnet_6.PNG" /></p>
+<h2 id="attaching-the-public-ip-address-to-the-vm"><hr/> attaching the public IP address to the VM</h2>
+<ul>
+<li>ip address cannot be directly attached to VM.</li>
+<li>
+<p>its attached it Network interface which is attached to VM
+<img alt="vnet_7" src="../images/virtual_network/vnet_7.PNG" /></p>
+</li>
+<li></li>
+<li>steps
+<img alt="vnet_8" src="../images/virtual_network/vnet_8.PNG" /></li>
+</ul>
+<h2 id="attaching-addition-network-interface-to-the-vm"><hr/>Attaching addition Network Interface to the VM</h2>
+<ul>
+<li>first you need to create new Network Interface.</li>
+<li>you need to create this Network Interface in the same Virtual Network and Subnet where the VM exist.</li>
+<li>then you need to stop the VM. else it won't allow the attaching of the Network Interface</li>
+</ul>
+<p><img alt="vnet_9" src="../images/virtual_network/vnet_9.PNG" /></p>
+<p><img alt="vnet_10" src="../images/virtual_network/vnet_10.PNG" /></p>
+<p><img alt="vnet_11" src="../images/virtual_network/vnet_11.PNG" /></p>
+<p><img alt="vnet_12" src="../images/virtual_network/vnet_12.PNG" /></p>
+<p><img alt="vnet_13" src="../images/virtual_network/vnet_13.PNG" /></p></div>
             </div>
         </div>
 
@@ -170,11 +214,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -239,8 +283,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.4.3
-Build Date UTC : 2023-07-23 02:14:23.915234+00:00
--->
