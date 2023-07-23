@@ -9,6 +9,7 @@ nav:
                 Azure Containers: learning/azure/compute_resources/azure_containers.md
             Virtual Networking:
                 Network Interface & CIDR Notation: learning/azure/virtual_networking/network_interface_n_cidr_notation.md
+                Virtual Network: learning/azure/virtual_networking/virtual_network.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:
