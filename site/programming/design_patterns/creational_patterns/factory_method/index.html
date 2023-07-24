@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_design_patterns/builder/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/factory_method/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Builder - PyCloudWorld</title>
+        <title>Factory Method - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -95,7 +95,11 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Builder</a>
+    <a href="../builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Factory Method</a>
 </li>
     </ul>
   </li>
@@ -122,7 +126,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../singleton/" class="nav-link">
+                                <a rel="prev" href="../builder/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -149,12 +153,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#builder" class="nav-link">Builder</a>
-              <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -162,120 +162,50 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="builder">Builder</h1>
-<p><img alt="builder_1" src="../images/builder_1.PNG" /></p>
+<p>f# Factory Method
+<img alt="factory_method" src="../images/factory_method.PNG" /></p>
 <h2 id="code">CODE</h2>
 <pre><code class="language-python">from __future__ import annotations
 from abc import ABC, abstractmethod
-from typing import Any
 
 
-class Builder(ABC):
-    @property
-    @abstractmethod
-    def product(self) -&gt; None:
-        pass
+class Transport(ABC):
 
     @abstractmethod
-    def produce_part_a(self) -&gt; None:
+    def cost(self) -&gt; str:
         pass
 
-    @abstractmethod
-    def produce_part_b(self) -&gt; None:
-        pass
+class RailTransport(Transport):
 
-    @abstractmethod
-    def produce_part_c(self) -&gt; None:
-        pass
+    def cost(self) -&gt; str:
+        return &quot;Rail Transport cost Rs 1000&quot;
 
 
-class ConcreteBuilder1(Builder):
-    def __init__(self) -&gt; None:
-        self.reset()
+class AirTransport(Transport):
+    def cost(self) -&gt; str:
+        return &quot;Air Transport cost Rs 4000&quot;
 
-    def reset(self) -&gt; None:
-        self._product = Product1()
+class SeaTransport(Transport):
+    def cost(self) -&gt; str:
+        return &quot;Sea Transport cost Rs 200&quot;
 
-    @property
-    def product(self) -&gt; Product1:
-        product = self._product
-        self.reset()
-        return product
-
-    def produce_part_a(self) -&gt; None:
-        self._product.add(&quot;PartA1&quot;)
-
-    def produce_part_b(self) -&gt; None:
-        self._product.add(&quot;PartB1&quot;)
-
-    def produce_part_c(self) -&gt; None:
-        self._product.add(&quot;PartC1&quot;)
-
-
-class Product1():
-    def __init__(self) -&gt; None:
-        self.parts = []
-
-    def add(self, part: Any) -&gt; None:
-        self.parts.append(part)
-
-    def list_parts(self) -&gt; None:
-        print(f&quot;Product parts: {', '.join(self.parts)}&quot;, end=&quot;&quot;)
-
-
-class Director:
-    def __init__(self) -&gt; None:
-        self._builder = None
-
-    @property
-    def builder(self) -&gt; Builder:
-        return self._builder
-
-    @builder.setter
-    def builder(self, builder: Builder) -&gt; None:
-        self._builder = builder
-
-    def build_minimal_viable_product(self) -&gt; None:
-        self.builder.produce_part_a()
-
-    def build_full_featured_product(self) -&gt; None:
-        self.builder.produce_part_a()
-        self.builder.produce_part_b()
-        self.builder.produce_part_c()
-
+class TransportFactory():
+   def create(self, typ):
+      targetclass = typ.capitalize()
+      return globals()[targetclass]()
 
 if __name__ == &quot;__main__&quot;:
-    director = Director()
-    builder = ConcreteBuilder1()
-    director.builder = builder
-
-    print(&quot;Standard basic product: &quot;)
-    director.build_minimal_viable_product()
-    builder.product.list_parts()
-
-    print(&quot;\n&quot;)
-
-    print(&quot;Standard full featured product: &quot;)
-    director.build_full_featured_product()
-    builder.product.list_parts()
-
-    print(&quot;\n&quot;)
-
-    # Remember, the Builder pattern can be used without a Director class.
-    print(&quot;Custom product: &quot;)
-    builder.produce_part_a()
-    builder.produce_part_b()
-    builder.product.list_parts()
+    transport_factory = TransportFactory()
+    transports = ['airtransport', 'railtransport', 'seatransport']
+    for transport in transports:
+        transport_obj = transport_factory.create(transport)
+        if hasattr(transport_obj, &quot;cost&quot;):
+           print(transport_obj.cost())
 </code></pre>
 <p>Output.txt: Execution result</p>
-<pre><code class="language-bash">Standard basic product: 
-Product parts: PartA1
-
-Standard full featured product: 
-Product parts: PartA1, PartB1, PartC1
-
-Custom product: 
-Product parts: PartA1, PartB1
+<pre><code class="language-bash">Air Transport cost Rs 4000
+Rail Transport cost Rs 1000
+Sea Transport cost Rs 200
 </code></pre></div>
             </div>
         </div>
