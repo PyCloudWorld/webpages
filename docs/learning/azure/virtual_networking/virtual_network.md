@@ -1,10 +1,5 @@
 # Virtual Network
 
-## <hr/> CIDR fullform
-* `C` - Classless
-* `ID` - Inter-Domain
-* `R` - Routing
-
 ## <hr/>Virtual Network can have many Address Space and Subnets
 ![vnet_1](images/virtual_network/vnet_1.PNG)
 
