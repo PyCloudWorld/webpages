@@ -26,12 +26,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_design_patterns/builder/</loc>
+         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/builder/</loc>
          <lastmod>2023-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_design_patterns/singleton/</loc>
+         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/factory_method/</loc>
+         <lastmod>2023-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/singleton/</loc>
          <lastmod>2023-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>

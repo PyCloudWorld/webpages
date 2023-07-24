@@ -4,26 +4,26 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>PyCloudWorld</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/builder/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Builder - PyCloudWorld</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">PyCloudWorld</a>
+                <a class="navbar-brand" href="../../../..">PyCloudWorld</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,11 +33,11 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="about.md" class="nav-link">About</a>
+                                <a href="../../../../about.md" class="nav-link">About</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learning <b class="caret"></b></a>
@@ -52,7 +52,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="learning/azure/compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+    <a href="../../../../learning/azure/compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
 </li>
     </ul>
   </li>
@@ -62,15 +62,15 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="learning/azure/virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+    <a href="../../../../learning/azure/virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
 </li>
             
 <li>
-    <a href="learning/azure/virtual_networking/virtual_network/" class="dropdown-item">Virtual Network</a>
+    <a href="../../../../learning/azure/virtual_networking/virtual_network/" class="dropdown-item">Virtual Network</a>
 </li>
             
 <li>
-    <a href="learning/azure/virtual_networking/network_security_group/" class="dropdown-item">Network Security Group</a>
+    <a href="../../../../learning/azure/virtual_networking/network_security_group/" class="dropdown-item">Network Security Group</a>
 </li>
     </ul>
   </li>
@@ -78,7 +78,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -91,15 +91,15 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="programming/design_patterns/creational_patterns/singleton/" class="dropdown-item">Singleton</a>
+    <a href="../singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="programming/design_patterns/creational_patterns/builder/" class="dropdown-item">Builder</a>
+    <a href="./" class="dropdown-item active">Builder</a>
 </li>
             
 <li>
-    <a href="programming/design_patterns/creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
+    <a href="../factory_method/" class="dropdown-item">Factory Method</a>
 </li>
     </ul>
   </li>
@@ -109,7 +109,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+    <a href="../../structural_patterns/proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -126,12 +126,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../singleton/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="learning/azure/compute_resources/azure_containers/" class="nav-link">
+                                <a rel="next" href="../factory_method/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -153,9 +153,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#welcome-to-pycloudworld" class="nav-link">Welcome to PyCloudWorld</a>
+            <li class="nav-item" data-level="1"><a href="#builder" class="nav-link">Builder</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -166,14 +166,121 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-pycloudworld">Welcome to PyCloudWorld</h1>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul></div>
+<h1 id="builder">Builder</h1>
+<p><img alt="builder_1" src="../images/builder_1.PNG" /></p>
+<h2 id="code">CODE</h2>
+<pre><code class="language-python">from __future__ import annotations
+from abc import ABC, abstractmethod
+from typing import Any
+
+
+class Builder(ABC):
+    @property
+    @abstractmethod
+    def product(self) -&gt; None:
+        pass
+
+    @abstractmethod
+    def produce_part_a(self) -&gt; None:
+        pass
+
+    @abstractmethod
+    def produce_part_b(self) -&gt; None:
+        pass
+
+    @abstractmethod
+    def produce_part_c(self) -&gt; None:
+        pass
+
+
+class ConcreteBuilder1(Builder):
+    def __init__(self) -&gt; None:
+        self.reset()
+
+    def reset(self) -&gt; None:
+        self._product = Product1()
+
+    @property
+    def product(self) -&gt; Product1:
+        product = self._product
+        self.reset()
+        return product
+
+    def produce_part_a(self) -&gt; None:
+        self._product.add(&quot;PartA1&quot;)
+
+    def produce_part_b(self) -&gt; None:
+        self._product.add(&quot;PartB1&quot;)
+
+    def produce_part_c(self) -&gt; None:
+        self._product.add(&quot;PartC1&quot;)
+
+
+class Product1():
+    def __init__(self) -&gt; None:
+        self.parts = []
+
+    def add(self, part: Any) -&gt; None:
+        self.parts.append(part)
+
+    def list_parts(self) -&gt; None:
+        print(f&quot;Product parts: {', '.join(self.parts)}&quot;, end=&quot;&quot;)
+
+
+class Director:
+    def __init__(self) -&gt; None:
+        self._builder = None
+
+    @property
+    def builder(self) -&gt; Builder:
+        return self._builder
+
+    @builder.setter
+    def builder(self, builder: Builder) -&gt; None:
+        self._builder = builder
+
+    def build_minimal_viable_product(self) -&gt; None:
+        self.builder.produce_part_a()
+
+    def build_full_featured_product(self) -&gt; None:
+        self.builder.produce_part_a()
+        self.builder.produce_part_b()
+        self.builder.produce_part_c()
+
+
+if __name__ == &quot;__main__&quot;:
+    director = Director()
+    builder = ConcreteBuilder1()
+    director.builder = builder
+
+    print(&quot;Standard basic product: &quot;)
+    director.build_minimal_viable_product()
+    builder.product.list_parts()
+
+    print(&quot;\n&quot;)
+
+    print(&quot;Standard full featured product: &quot;)
+    director.build_full_featured_product()
+    builder.product.list_parts()
+
+    print(&quot;\n&quot;)
+
+    # Remember, the Builder pattern can be used without a Director class.
+    print(&quot;Custom product: &quot;)
+    builder.produce_part_a()
+    builder.produce_part_b()
+    builder.product.list_parts()
+</code></pre>
+<p>Output.txt: Execution result</p>
+<pre><code class="language-bash">Standard basic product: 
+Product parts: PartA1
+
+Standard full featured product: 
+Product parts: PartA1, PartB1, PartC1
+
+Custom product: 
+Product parts: PartA1, PartB1
+</code></pre></div>
             </div>
         </div>
 
@@ -182,11 +289,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -251,8 +358,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.4.3
-Build Date UTC : 2023-07-24 11:25:36.526141+00:00
--->
