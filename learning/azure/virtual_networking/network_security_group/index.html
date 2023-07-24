@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/virtual_network/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/network_security_group/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Virtual Network - PyCloudWorld</title>
+        <title>Network Security Group - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -66,11 +66,11 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Virtual Network</a>
+    <a href="../virtual_network/" class="dropdown-item">Virtual Network</a>
 </li>
             
 <li>
-    <a href="../network_security_group/" class="dropdown-item">Network Security Group</a>
+    <a href="./" class="dropdown-item active">Network Security Group</a>
 </li>
     </ul>
   </li>
@@ -122,12 +122,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../network_interface_n_cidr_notation/" class="nav-link">
+                                <a rel="prev" href="../virtual_network/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../network_security_group/" class="nav-link">
+                                <a rel="next" href="../../../../programming/design_patterns/creational_design_patterns/singleton/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -149,25 +149,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#virtual-network" class="nav-link">Virtual Network</a>
+            <li class="nav-item" data-level="1"><a href="#network-security-group" class="nav-link">Network Security Group</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#virtual-network-can-have-many-address-space-and-subnets" class="nav-link">Virtual Network can have many Address Space and Subnets</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#cost-of-ip-addresses" class="nav-link">Cost of IP Addresses</a>
+            <li class="nav-item" data-level="2"><a href="#what-is-network-security-group" class="nav-link">What is Network Security Group</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#create-public-ip-address" class="nav-link">Create public IP address</a>
+            <li class="nav-item" data-level="2"><a href="#where-can-nsg-be-attached" class="nav-link">Where can NSG be attached</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#attaching-the-public-ip-address-to-the-vm" class="nav-link"> attaching the public IP address to the VM</a>
+            <li class="nav-item" data-level="2"><a href="#where-can-nsg-be-attached_1" class="nav-link">Where can NSG be attached</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#attaching-addition-network-interface-to-the-vm" class="nav-link">Attaching addition Network Interface to the VM</a>
+            <li class="nav-item" data-level="2"><a href="#example" class="nav-link">EXAMPLE</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -178,42 +174,30 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="virtual-network">Virtual Network</h1>
-<h2 id="virtual-network-can-have-many-address-space-and-subnets"><hr/>Virtual Network can have many Address Space and Subnets</h2>
-<p><img alt="vnet_1" src="../images/virtual_network/vnet_1.PNG" /></p>
-<p><br/></p>
-<p><img alt="vnet_2" src="../images/virtual_network/vnet_2.PNG" /></p>
-<p><br/></p>
-<p><img alt="vnet_3" src="../images/virtual_network/vnet_3.PNG" /></p>
-<p><br/></p>
-<p><img alt="vnet_4" src="../images/virtual_network/vnet_4.PNG" /></p>
-<h2 id="cost-of-ip-addresses"><hr/>Cost of IP Addresses</h2>
-<p>https://azure.microsoft.com/en-us/pricing/details/ip-addresses/</p>
-<p><img alt="vnet_5" src="../images/virtual_network/vnet_5.PNG" /></p>
-<h2 id="create-public-ip-address"><hr/>Create public IP address</h2>
-<p><img alt="vnet_6" src="../images/virtual_network/vnet_6.PNG" /></p>
-<h2 id="attaching-the-public-ip-address-to-the-vm"><hr/> attaching the public IP address to the VM</h2>
-<ul>
-<li>ip address cannot be directly attached to VM.</li>
-<li>
-<p>its attached it Network interface which is attached to VM
-<img alt="vnet_7" src="../images/virtual_network/vnet_7.PNG" /></p>
-</li>
-<li></li>
-<li>steps
-<img alt="vnet_8" src="../images/virtual_network/vnet_8.PNG" /></li>
-</ul>
-<h2 id="attaching-addition-network-interface-to-the-vm"><hr/>Attaching addition Network Interface to the VM</h2>
-<ul>
-<li>first you need to create new Network Interface.</li>
-<li>you need to create this Network Interface in the same Virtual Network and Subnet where the VM exist.</li>
-<li>then you need to stop the VM. else it won't allow the attaching of the Network Interface</li>
-</ul>
-<p><img alt="vnet_9" src="../images/virtual_network/vnet_9.PNG" /></p>
-<p><img alt="vnet_10" src="../images/virtual_network/vnet_10.PNG" /></p>
-<p><img alt="vnet_11" src="../images/virtual_network/vnet_11.PNG" /></p>
-<p><img alt="vnet_12" src="../images/virtual_network/vnet_12.PNG" /></p>
-<p><img alt="vnet_13" src="../images/virtual_network/vnet_13.PNG" /></p></div>
+<h1 id="network-security-group">Network Security Group</h1>
+<h2 id="what-is-network-security-group"><hr/>What is Network Security Group</h2>
+<p>it's a firewall<br>
+it is applied in Inbound and Outbound Rules only<br>
+- Inbound port rules<br>
+- Outbound port rules<br></p>
+<p><img alt="nsg_01" src="../images/network_security_group/nsg_01.PNG" /></p>
+<h2 id="where-can-nsg-be-attached"><hr/>Where can NSG be attached</h2>
+<p>which can be attached to<br>
+- Subnet<br>
+- Network Interface<br></p>
+<p><img alt="nsg_02" src="../images/network_security_group/nsg_02.PNG" /></p>
+<h2 id="where-can-nsg-be-attached_1"><hr/>Where can NSG be attached</h2>
+<p>which can be attached to<br>
+- Subnet<br>
+- Network Interface<br></p>
+<p><img alt="nsg_03" src="../images/network_security_group/nsg_03.PNG" /></p>
+<p><img alt="nsg_04" src="../images/network_security_group/nsg_04.PNG" /></p>
+<h2 id="example"><hr/>EXAMPLE</h2>
+<p>which can be attached to<br>
+- Subnet<br>
+- Network Interface<br></p>
+<p><img alt="nsg_05" src="../images/network_security_group/nsg_05.PNG" /></p>
+<p><img alt="nsg_06" src="../images/network_security_group/nsg_06.PNG" /></p></div>
             </div>
         </div>
 
