@@ -17,6 +17,8 @@ nav:
                 Singleton: programming/design_patterns/creational_patterns/singleton.md
                 Builder: programming/design_patterns/creational_patterns/builder.md
                 Factory Method: programming/design_patterns/creational_patterns/factory_method.md
+                Prototype: programming/design_patterns/creational_patterns/prototype.md
+                Abstract Factory: programming/design_patterns/creational_patterns/abstract_factory.md
             Structural Patterns:
                 Proxy: programming/design_patterns/structural_patterns/proxy.md
 

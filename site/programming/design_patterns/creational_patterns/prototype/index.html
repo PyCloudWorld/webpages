@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/structural_patterns/proxy/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/prototype/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Proxy - PyCloudWorld</title>
+        <title>Prototype - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -91,23 +91,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../creational_patterns/singleton/" class="dropdown-item">Singleton</a>
+    <a href="../singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/builder/" class="dropdown-item">Builder</a>
+    <a href="../builder/" class="dropdown-item">Builder</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
+    <a href="../factory_method/" class="dropdown-item">Factory Method</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/prototype/" class="dropdown-item">Prototype</a>
+    <a href="./" class="dropdown-item active">Prototype</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
+    <a href="../abstract_factory/" class="dropdown-item">Abstract Factory</a>
 </li>
     </ul>
   </li>
@@ -117,7 +117,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="./" class="dropdown-item active">Proxy</a>
+    <a href="../../structural_patterns/proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -134,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../creational_patterns/abstract_factory/" class="nav-link">
+                                <a rel="prev" href="../factory_method/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../abstract_factory/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -161,16 +161,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#proxy" class="nav-link">Proxy</a>
+            <li class="nav-item" data-level="1"><a href="#prototype" class="nav-link">Prototype</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#problem" class="nav-link">Problem</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#solution" class="nav-link">Solution</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
               <ul class="nav flex-column">
               </ul>
@@ -182,71 +174,46 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="proxy">Proxy</h1>
-<h2 id="problem">Problem</h2>
-<p>Why would you want to control access to an object? Here is an example: you have a massive object that consumes a vast amount of system resources. You need it from time to time, but not always.</p>
-<p><img alt="proxy_1" src="../images/proxy_1.PNG" /></p>
-<p>You could implement lazy initialization: create this object only when it’s actually needed. All of the object’s clients would need to execute some deferred initialization code. Unfortunately, this would probably cause a lot of code duplication.</p>
-<h2 id="solution">Solution</h2>
-<p>The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.</p>
-<p><img alt="proxy_2" src="../images/proxy_2.PNG" /></p>
-<p>But what’s the benefit? If you need to execute something either before or after the primary logic of the class, the proxy lets you do this without changing that class. Since the proxy implements the same interface as the original class, it can be passed to any client that expects a real service object.</p>
+<h1 id="prototype">Prototype</h1>
+<p><img alt="prototype" src="../images/prototype.PNG" /></p>
 <h2 id="code">CODE</h2>
-<pre><code class="language-python">from abc import ABC, abstractmethod
+<pre><code class="language-python">import copy
+
+class Doors:
+    def __init__(self, count: int = None):
+        self.number_of_doors =  count
+
+class Body:
+    def __init__(self, color: str = None):
+        self.color = color
+
+class Chasis:
+    def __init__(self, number: str = None):
+        self.number = number
+
+class Car:
+    def __init__(self,
+                 name: str = None,
+                 door : Doors = None,
+                 body: Body = None,
+                 chasis: Chasis = None):
+        self.name = name
+        self.number_of_doors = door.number_of_doors
+        self.body_color = body.color
+        self.chasis_number = chasis.number
+
+    def __str__(self):
+        return str(self.name)
+
+    def clone(self):
+        return copy.deepcopy(self)
 
 
-class Subject(ABC):
-    @abstractmethod
-    def request(self) -&gt; None:
-        pass
-
-
-class RealSubject(Subject):
-
-    def request(self) -&gt; None:
-        print(&quot;RealSubject: Handling request.&quot;)
-
-
-class Proxy(Subject):
-    def __init__(self, real_subject: RealSubject) -&gt; None:
-        self._real_subject = real_subject
-
-    def request(self) -&gt; None:
-        if self.check_access():
-            self._real_subject.request()
-            self.log_access()
-
-    def check_access(self) -&gt; bool:
-        print(&quot;Proxy: Checking access prior to firing a real request.&quot;)
-        return True
-
-    def log_access(self) -&gt; None:
-        print(&quot;Proxy: Logging the time of request.&quot;, end=&quot;&quot;)
-
-
-def client_code(subject: Subject) -&gt; None:
-    subject.request()
-
-
-if __name__ == &quot;__main__&quot;:
-    print(&quot;Client: Executing the client code with a real subject:&quot;)
-    real_subject = RealSubject()
-    client_code(real_subject)
-
-    print(&quot;&quot;)
-
-    print(&quot;Client: Executing the same client code with a proxy:&quot;)
-    proxy = Proxy(real_subject)
-    client_code(proxy)
-</code></pre>
-<p>Output.txt: Execution result</p>
-<pre><code class="language-bash">Client: Executing the client code with a real subject:
-RealSubject: Handling request.
-
-Client: Executing the same client code with a proxy:
-Proxy: Checking access prior to firing a real request.
-RealSubject: Handling request.
-Proxy: Logging the time of request.
+bmw_doors = Doors(5)
+bmw_body = Body(&quot;black&quot;)
+bmw_chasis = Chasis(&quot;ash24031986&quot;)
+bmw = Car(name=&quot;BMW&quot;, door=bmw_doors, body=bmw_body, chasis=bmw_chasis)
+bmw_new_model = bmw.clone()
 </code></pre></div>
             </div>
         </div>

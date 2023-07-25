@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/structural_patterns/proxy/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/abstract_factory/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Proxy - PyCloudWorld</title>
+        <title>Abstract Factory - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -91,23 +91,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../creational_patterns/singleton/" class="dropdown-item">Singleton</a>
+    <a href="../singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/builder/" class="dropdown-item">Builder</a>
+    <a href="../builder/" class="dropdown-item">Builder</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
+    <a href="../factory_method/" class="dropdown-item">Factory Method</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/prototype/" class="dropdown-item">Prototype</a>
+    <a href="../prototype/" class="dropdown-item">Prototype</a>
 </li>
             
 <li>
-    <a href="../../creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
+    <a href="./" class="dropdown-item active">Abstract Factory</a>
 </li>
     </ul>
   </li>
@@ -117,7 +117,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="./" class="dropdown-item active">Proxy</a>
+    <a href="../../structural_patterns/proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -134,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../creational_patterns/abstract_factory/" class="nav-link">
+                                <a rel="prev" href="../prototype/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../../structural_patterns/proxy/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -161,16 +161,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#proxy" class="nav-link">Proxy</a>
+            <li class="nav-item" data-level="1"><a href="#abstract-factory" class="nav-link">Abstract Factory</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#problem" class="nav-link">Problem</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#solution" class="nav-link">Solution</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
               <ul class="nav flex-column">
               </ul>
@@ -182,71 +174,145 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="proxy">Proxy</h1>
-<h2 id="problem">Problem</h2>
-<p>Why would you want to control access to an object? Here is an example: you have a massive object that consumes a vast amount of system resources. You need it from time to time, but not always.</p>
-<p><img alt="proxy_1" src="../images/proxy_1.PNG" /></p>
-<p>You could implement lazy initialization: create this object only when it’s actually needed. All of the object’s clients would need to execute some deferred initialization code. Unfortunately, this would probably cause a lot of code duplication.</p>
-<h2 id="solution">Solution</h2>
-<p>The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.</p>
-<p><img alt="proxy_2" src="../images/proxy_2.PNG" /></p>
-<p>But what’s the benefit? If you need to execute something either before or after the primary logic of the class, the proxy lets you do this without changing that class. Since the proxy implements the same interface as the original class, it can be passed to any client that expects a real service object.</p>
+<h1 id="abstract-factory">Abstract Factory</h1>
+<p><img alt="abstract_factory" src="../images/abstract_factory.PNG" /></p>
 <h2 id="code">CODE</h2>
 <pre><code class="language-python">from abc import ABC, abstractmethod
 
-
-class Subject(ABC):
+class AbstractMobileUIFactory(ABC):
     @abstractmethod
-    def request(self) -&gt; None:
+    def create_story(self):
+        pass
+
+    @abstractmethod
+    def upload_photo(self):
+        pass
+
+class AndroidFactory(AbstractMobileUIFactory):
+    def create_story(self):
+        print(&quot;Inside AndroidFactory class&quot;)
+        AndroidCreateStory().story()
+
+    def upload_photo(self):
+        print(&quot;Inside AndroidFactory class&quot;)
+        AndroidUploadPhoto().photo()
+
+class IosFactory(AbstractMobileUIFactory):
+    def create_story(self):
+        print(&quot;Inside IosFactory class&quot;)
+        IosCreateStory().story()
+
+    def upload_photo(self):
+        print(&quot;Inside IosFactory class&quot;)
+        IosUploadPhoto().photo()
+
+class SymbianFactory(AbstractMobileUIFactory):
+    def create_story(self):
+        print(&quot;Inside SymbianFactory class&quot;)
+        SymbianCreateStory().story()
+
+    def upload_photo(self):
+        print(&quot;Inside SymbianFactory class&quot;)
+        SymbianUploadPhoto().photo()
+
+class AbstractCreateStory(ABC):
+    @abstractmethod
+    def story(self):
         pass
 
 
-class RealSubject(Subject):
+class AndroidCreateStory(AbstractCreateStory):
+    def story(self):
+        print(&quot;[Android] Creating story on android platform.&quot;)
 
-    def request(self) -&gt; None:
-        print(&quot;RealSubject: Handling request.&quot;)
+class IosCreateStory(AbstractCreateStory):
+    def story(self):
+        print(&quot;[IOS] Creating story on IOS platform.&quot;)
 
-
-class Proxy(Subject):
-    def __init__(self, real_subject: RealSubject) -&gt; None:
-        self._real_subject = real_subject
-
-    def request(self) -&gt; None:
-        if self.check_access():
-            self._real_subject.request()
-            self.log_access()
-
-    def check_access(self) -&gt; bool:
-        print(&quot;Proxy: Checking access prior to firing a real request.&quot;)
-        return True
-
-    def log_access(self) -&gt; None:
-        print(&quot;Proxy: Logging the time of request.&quot;, end=&quot;&quot;)
+class SymbianCreateStory(AbstractCreateStory):
+    def story(self):
+        print(&quot;[Symbian] Ok boomer! Creating story on Symbian platform, while we can!!&quot;)
 
 
-def client_code(subject: Subject) -&gt; None:
-    subject.request()
+class AbstractUploadPhoto(ABC):
+    @abstractmethod
+    def photo(self):
+        pass
 
+class AndroidUploadPhoto(AbstractUploadPhoto):
+    def photo(self):
+        print(&quot;[Android] Uploading photo on android platform.&quot;)
 
-if __name__ == &quot;__main__&quot;:
-    print(&quot;Client: Executing the client code with a real subject:&quot;)
-    real_subject = RealSubject()
-    client_code(real_subject)
+class IosUploadPhoto(AbstractUploadPhoto):
+    def photo(self):
+        print(&quot;[IOS] Uploading photo on IOS platform.&quot;)
 
-    print(&quot;&quot;)
+class SymbianUploadPhoto(AbstractUploadPhoto):
+    def photo(self):
+        print(&quot;[Symbian] So you want us to upload petroglyph? Since we are backward compatible, why not! Uploading photo on Symbian platform&quot;)
 
-    print(&quot;Client: Executing the same client code with a proxy:&quot;)
-    proxy = Proxy(real_subject)
-    client_code(proxy)
+class Application():
+
+    def get_factory(self, platform_type):
+        factory = None
+        if platform_type == &quot;Android&quot;:
+            factory = AndroidFactory()
+        elif platform_type == &quot;IOS&quot;:
+            factory = IosFactory()
+        elif platform_type == &quot;Symbian&quot;:
+            factory = SymbianFactory()
+        else:
+            print(&quot;ERROR: unknown platform type.&quot;)
+        return factory
+
+    def create_story(self, factory=None):
+        if not factory:
+            print(&quot;factory object not passed&quot;)
+        factory.create_story()
+
+    def upload_photo(self, factory=None):
+        if not factory:
+            print(&quot;factory object not passed&quot;)
+        factory.upload_photo()
+
+if __name__ == '__main__':
+    app_object = Application()
+
+    # in real world scenarios, instead of pass hardcoded platform type we can read platform type from config file.
+    print(&quot;Running for Android platform...&quot;)
+    factory_object = app_object.get_factory(&quot;Android&quot;)
+    factory_object.create_story()
+    factory_object.upload_photo()
+    print(&quot;\n&quot;)
+
+    print(&quot;Running for IOS platform...&quot;)
+    factory_object = app_object.get_factory(&quot;IOS&quot;)
+    factory_object.create_story()
+    factory_object.upload_photo()
+    print(&quot;\n&quot;)
+
+    print(&quot;Running for Symbian platform...&quot;)
+    factory_object = app_object.get_factory(&quot;Symbian&quot;)
+    factory_object.create_story()
+    factory_object.upload_photo()
+    print(&quot;\n&quot;)
 </code></pre>
 <p>Output.txt: Execution result</p>
-<pre><code class="language-bash">Client: Executing the client code with a real subject:
-RealSubject: Handling request.
-
-Client: Executing the same client code with a proxy:
-Proxy: Checking access prior to firing a real request.
-RealSubject: Handling request.
-Proxy: Logging the time of request.
+<pre><code class="language-bash">Running for Android platform...
+Inside AndroidFactory class
+[Android] Creating story on android platform.
+Inside AndroidFactory class
+[Android] Uploading photo on android platform.
+Running for IOS platform...
+Inside IosFactory class
+[IOS] Creating story on IOS platform.
+Inside IosFactory class
+[IOS] Uploading photo on IOS platform.
+Running for Symbian platform...
+Inside SymbianFactory class
+[Symbian] Ok boomer! Creating story on Symbian platform, while we can!!
+Inside SymbianFactory class
+[Symbian] So you want us to upload petroglyph? Since we are backward compatible, why not! Uploading photo on Symbian platform```
 </code></pre></div>
             </div>
         </div>
