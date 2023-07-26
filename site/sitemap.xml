@@ -2,57 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pycloudworld.github.io/webpages/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/learning/azure/compute_resources/azure_containers/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/application_security_group/</loc>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/network_interface_n_cidr_notation/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/network_security_group/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/virtual_network/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/abstract_factory/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/builder/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/factory_method/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/prototype/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/singleton/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/structural_patterns/proxy/</loc>
-         <lastmod>2023-07-25</lastmod>
+         <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
