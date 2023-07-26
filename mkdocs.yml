@@ -21,5 +21,6 @@ nav:
                 Prototype: programming/design_patterns/creational_patterns/prototype.md
                 Abstract Factory: programming/design_patterns/creational_patterns/abstract_factory.md
             Structural Patterns:
+                Adapter: programming/design_patterns/structural_patterns/adapter.md
                 Proxy: programming/design_patterns/structural_patterns/proxy.md
 
