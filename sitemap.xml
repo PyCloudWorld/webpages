@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/structural_patterns/adapter/</loc>
+         <lastmod>2023-07-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pycloudworld.github.io/webpages/programming/design_patterns/structural_patterns/proxy/</loc>
          <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/factory_method/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/structural_patterns/adapter/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Factory Method - PyCloudWorld</title>
+        <title>Adapter - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -95,23 +95,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../singleton/" class="dropdown-item">Singleton</a>
+    <a href="../../creational_patterns/singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="../builder/" class="dropdown-item">Builder</a>
+    <a href="../../creational_patterns/builder/" class="dropdown-item">Builder</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Factory Method</a>
+    <a href="../../creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
 </li>
             
 <li>
-    <a href="../prototype/" class="dropdown-item">Prototype</a>
+    <a href="../../creational_patterns/prototype/" class="dropdown-item">Prototype</a>
 </li>
             
 <li>
-    <a href="../abstract_factory/" class="dropdown-item">Abstract Factory</a>
+    <a href="../../creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
 </li>
     </ul>
   </li>
@@ -121,11 +121,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../structural_patterns/adapter/" class="dropdown-item">Adapter</a>
+    <a href="./" class="dropdown-item active">Adapter</a>
 </li>
             
 <li>
-    <a href="../../structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+    <a href="../proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -142,12 +142,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../builder/" class="nav-link">
+                                <a rel="prev" href="../../creational_patterns/abstract_factory/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../prototype/" class="nav-link">
+                                <a rel="next" href="../proxy/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -169,8 +169,32 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#adapter" class="nav-link">Adapter</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_5" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -178,50 +202,38 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>f# Factory Method
-<img alt="factory_method" src="../images/factory_method.PNG" /></p>
+<h1 id="adapter">Adapter</h1>
+<h2 id="_1"><hr/></h2>
+<p><img alt="adapter_1" src="../images/adapter_1.PNG" /></p>
+<h2 id="_2"><hr/></h2>
+<p><img alt="adapter_2" src="../images/adapter_2.PNG" /></p>
+<h2 id="_3"><hr/></h2>
+<p><img alt="adapter_3" src="../images/adapter_3.PNG" /></p>
+<h2 id="_4"><hr/></h2>
+<p><img alt="adapter_4" src="../images/adapter_4.PNG" /></p>
+<h2 id="_5"><hr/></h2>
 <h2 id="code">CODE</h2>
-<pre><code class="language-python">from __future__ import annotations
-from abc import ABC, abstractmethod
+<pre><code class="language-python">class Car:
+    def assign_driver(self, driver_name):
+        print(f&quot;{driver_name} is driving the car&quot;)
 
+class Motorcycle:
+    def assign_rider(self, rider_name):
+        print(f&quot;{rider_name} is riding the motorcycle&quot;)
 
-class Transport(ABC):
+class MotorcycleAdapter:
 
-    @abstractmethod
-    def cost(self) -&gt; str:
-        pass
+    def __init__(self, motorcycle):
+        self.motorcycle = motorcycle
 
-class RailTransport(Transport):
+    def assign_driver(self, name):
+        self.motorcycle.assign_rider(name)
 
-    def cost(self) -&gt; str:
-        return &quot;Rail Transport cost Rs 1000&quot;
-
-
-class AirTransport(Transport):
-    def cost(self) -&gt; str:
-        return &quot;Air Transport cost Rs 4000&quot;
-
-class SeaTransport(Transport):
-    def cost(self) -&gt; str:
-        return &quot;Sea Transport cost Rs 200&quot;
-
-class TransportFactory():
-   def create(self, typ):
-      targetclass = typ.capitalize()
-      return globals()[targetclass]()
-
-if __name__ == &quot;__main__&quot;:
-    transport_factory = TransportFactory()
-    transports = ['airtransport', 'railtransport', 'seatransport']
-    for transport in transports:
-        transport_obj = transport_factory.create(transport)
-        if hasattr(transport_obj, &quot;cost&quot;):
-           print(transport_obj.cost())
-</code></pre>
-<p>Output.txt: Execution result</p>
-<pre><code class="language-bash">Air Transport cost Rs 4000
-Rail Transport cost Rs 1000
-Sea Transport cost Rs 200
+if __name__ == '__main__':
+    car = Car()
+    bike = Motorcycle()
+    bike_adapter = MotorcycleAdapter(bike)
+    bike_adapter.assign_driver(&quot;Robert&quot;)
 </code></pre></div>
             </div>
         </div>
