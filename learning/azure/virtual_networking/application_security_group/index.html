@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/prototype/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/application_security_group/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Prototype - PyCloudWorld</title>
+        <title>Application Security Group - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                             <li class="navitem">
                                 <a href="../../../../about.md" class="nav-link">About</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learning <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -52,7 +52,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../../learning/azure/compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
 </li>
     </ul>
   </li>
@@ -62,19 +62,19 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+    <a href="../network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/virtual_network/" class="dropdown-item">Virtual Network</a>
+    <a href="../virtual_network/" class="dropdown-item">Virtual Network</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/network_security_group/" class="dropdown-item">Network Security Group</a>
+    <a href="../network_security_group/" class="dropdown-item">Network Security Group</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/application_security_group/" class="dropdown-item">Application Security Group</a>
+    <a href="./" class="dropdown-item active">Application Security Group</a>
 </li>
     </ul>
   </li>
@@ -82,7 +82,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -95,23 +95,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../singleton/" class="dropdown-item">Singleton</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="../builder/" class="dropdown-item">Builder</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/builder/" class="dropdown-item">Builder</a>
 </li>
             
 <li>
-    <a href="../factory_method/" class="dropdown-item">Factory Method</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Prototype</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/prototype/" class="dropdown-item">Prototype</a>
 </li>
             
 <li>
-    <a href="../abstract_factory/" class="dropdown-item">Abstract Factory</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
 </li>
     </ul>
   </li>
@@ -121,7 +121,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+    <a href="../../../../programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -138,12 +138,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../factory_method/" class="nav-link">
+                                <a rel="prev" href="../network_security_group/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../abstract_factory/" class="nav-link">
+                                <a rel="next" href="../../../../programming/design_patterns/creational_patterns/singleton/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -165,9 +165,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#prototype" class="nav-link">Prototype</a>
+            <li class="nav-item" data-level="1"><a href="#application-security-group" class="nav-link">Application Security Group</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
+            <li class="nav-item" data-level="2"><a href="#architecture-of-application-security-group" class="nav-link">Architecture of Application Security Group</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-application-security-group" class="nav-link">Create Application Security Group</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-vms-to-application-security-group" class="nav-link">Add VMS to Application Security Group</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#grant-rules-for-application-security-group-in-the-network-security-group-nsg" class="nav-link">grant rules for Application Security Group in the Network Security Group (NSG)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -178,47 +190,17 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="prototype">Prototype</h1>
-<p><img alt="prototype" src="../images/prototype.PNG" /></p>
-<h2 id="code">CODE</h2>
-<pre><code class="language-python">import copy
-
-class Doors:
-    def __init__(self, count: int = None):
-        self.number_of_doors =  count
-
-class Body:
-    def __init__(self, color: str = None):
-        self.color = color
-
-class Chasis:
-    def __init__(self, number: str = None):
-        self.number = number
-
-class Car:
-    def __init__(self,
-                 name: str = None,
-                 door : Doors = None,
-                 body: Body = None,
-                 chasis: Chasis = None):
-        self.name = name
-        self.number_of_doors = door.number_of_doors
-        self.body_color = body.color
-        self.chasis_number = chasis.number
-
-    def __str__(self):
-        return str(self.name)
-
-    def clone(self):
-        return copy.deepcopy(self)
-
-
-bmw_doors = Doors(5)
-bmw_body = Body(&quot;black&quot;)
-bmw_chasis = Chasis(&quot;ash24031986&quot;)
-bmw = Car(name=&quot;BMW&quot;, door=bmw_doors, body=bmw_body, chasis=bmw_chasis)
-bmw_new_model = bmw.clone()
-</code></pre></div>
+<h1 id="application-security-group">Application Security Group</h1>
+<h2 id="architecture-of-application-security-group"><hr/>Architecture of Application Security Group</h2>
+<p><img alt="asg_1" src="../images/application_security_group/asg_1.PNG" /></p>
+<p><br/></p>
+<h2 id="create-application-security-group"><hr/>Create Application Security Group</h2>
+<p><img alt="asg_2" src="../images/application_security_group/asg_2.PNG" /></p>
+<p><br/></p>
+<h2 id="add-vms-to-application-security-group"><hr/>Add VMS to Application Security Group</h2>
+<p><img alt="asg_3" src="../images/application_security_group/asg_3.PNG" /></p>
+<h2 id="grant-rules-for-application-security-group-in-the-network-security-group-nsg"><hr/>grant rules for Application Security Group in the Network Security Group (NSG)</h2>
+<p><img alt="asg_4" src="../images/application_security_group/asg_4.PNG" /></p></div>
             </div>
         </div>
 
