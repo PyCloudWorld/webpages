@@ -12,6 +12,7 @@ nav:
                 Virtual Network: learning/azure/virtual_networking/virtual_network.md
                 Network Security Group: learning/azure/virtual_networking/network_security_group.md
                 Application Security Group: learning/azure/virtual_networking/application_security_group.md
+                Application Security Group1: learning/azure/virtual_networking/application_security_group.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:
