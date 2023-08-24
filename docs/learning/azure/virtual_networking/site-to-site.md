@@ -16,13 +16,7 @@
 ## <hr/>Virtual Network can have many Address Space and Subnets
 ![1](images/site-to-site/1.png)
 
-<br/>
-
-![2](images/site-to-site/2.png)
-## <hr/><hr/>high level
-
-
-## <hr/><hr/>lets start the installation
+### <hr/><hr/>high level
 ![image](images/site-to-site/72.png)
 ![image](images/site-to-site/73.png)
 ![image](images/site-to-site/74.png)
@@ -34,6 +28,9 @@
 ![image](images/site-to-site/83.png)
 ![image](images/site-to-site/84.png)
 ![image](images/site-to-site/85.png)
+
+## <hr/><hr/>lets start the installation
+
 
 
 ## <hr/>step 1 : make the azure main_office_vnet, ip range as 10.0.0.0/16 and add create a vm 
