@@ -13,6 +13,7 @@ nav:
                 Network Security Group: learning/azure/virtual_networking/network_security_group.md
                 Application Security Group: learning/azure/virtual_networking/application_security_group.md
                 Site to Site VPN Connection: learning/azure/virtual_networking/site-to-site.md
+                Virtual WAN: learning/azure/virtual_networking/virtual_WAN.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:
