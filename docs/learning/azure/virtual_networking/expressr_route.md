@@ -19,3 +19,5 @@
 
 ## <hr/> Incomplete. as now you need to connect with the Service provider and get the further details
 
+## <hr/> ExpressRoute Circuit
+![image](images/expressRoute/5.png)
