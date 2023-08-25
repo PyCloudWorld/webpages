@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/virtual_WAN/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Virtual WAN - PyCloudWorld</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">PyCloudWorld</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../about.md" class="nav-link">About</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Compute Resources</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Virtual Networking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+</li>
+            
+<li>
+    <a href="../virtual_network/" class="dropdown-item">Virtual Network</a>
+</li>
+            
+<li>
+    <a href="../network_security_group/" class="dropdown-item">Network Security Group</a>
+</li>
+            
+<li>
+    <a href="../application_security_group/" class="dropdown-item">Application Security Group</a>
+</li>
+            
+<li>
+    <a href="../site-to-site/" class="dropdown-item">Site to Site VPN Connection</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Virtual WAN</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Design Patterns</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creational Design Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/prototype/" class="dropdown-item">Prototype</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Structural Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../programming/design_patterns/structural_patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../site-to-site/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../../../programming/design_patterns/creational_patterns/singleton/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#virtual-wan" class="nav-link">Virtual WAN</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#virtual-wan_1" class="nav-link">Virtual WAN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#steps-to-install" class="nav-link">Steps to install</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#types-of-virtualwan" class="nav-link"> Types of VirtualWAN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="virtual-wan">Virtual WAN</h1>
+<h2 id="virtual-wan_1"><hr/>Virtual WAN</h2>
+<p><img alt="image" src="../images/virtual_wan/1.png" />
+<img alt="image" src="../images/virtual_wan/2.png" />
+<img alt="image" src="../images/virtual_wan/3.png" />
+<img alt="image" src="../images/virtual_wan/28.png" /></p>
+<h2 id="steps-to-install"><hr/>Steps to install</h2>
+<ul>
+<li>install virtual WAN</li>
+<li>create the Hub inside VirtualWAN</li>
+<li>map it with the VNets and on- premise</li>
+</ul>
+<h2 id="types-of-virtualwan"><hr/> Types of VirtualWAN</h2>
+<ul>
+<li>There are 2 types of VirtualWAN</li>
+<li>Standard </li>
+<li>Basic
+<img alt="image" src="../images/virtual_wan/28.png" /></li>
+</ul>
+<h3 id="step-1-lets-create-2-vnets-and-one-one-vm-in-it"></hr> Step 1: lets create 2 VNet's and one one VM in it</h3>
+<ul>
+<li>the public IP would be off in both the cases</li>
+<li>VNET: <vnet1></li>
+<li>VM : <windows11> </li>
+<li>IP range : &lt;10.1.0.0/16&gt;</li>
+<li>VNET: <vnet2></li>
+<li>VM : <windows22> </li>
+<li>IP range : &lt;10.2.0.0/16&gt;
+<img alt="image" src="../images/virtual_wan/31.png" />
+<img alt="image" src="../images/virtual_wan/4.png" />
+<img alt="image" src="../images/virtual_wan/5.png" />
+<img alt="image" src="../images/virtual_wan/6.png" />
+<img alt="image" src="../images/virtual_wan/7.png" />
+<img alt="image" src="../images/virtual_wan/8.png" />
+<img alt="image" src="../images/virtual_wan/9.png" />
+<img alt="image" src="../images/virtual_wan/10.png" />
+<img alt="image" src="../images/virtual_wan/11.png" />
+<img alt="image" src="../images/virtual_wan/12.png" />
+<img alt="image" src="../images/virtual_wan/13.png" />
+<img alt="image" src="../images/virtual_wan/14.png" />
+<img alt="image" src="../images/virtual_wan/15.png" />
+<img alt="image" src="../images/virtual_wan/16.png" />
+<img alt="image" src="../images/virtual_wan/17.png" />
+<img alt="image" src="../images/virtual_wan/19.png" />
+<img alt="image" src="../images/virtual_wan/20.png" />
+<img alt="image" src="../images/virtual_wan/21.png" />
+<img alt="image" src="../images/virtual_wan/22.png" />
+<img alt="image" src="../images/virtual_wan/23.png" />
+<img alt="image" src="../images/virtual_wan/24.png" /></li>
+</ul>
+<h3 id="step-2-create-virtualwan"><hr/> Step 2: create VirtualWAN</h3>
+<ul>
+<li>Name : pyVirtualWAN</li>
+<li>Type: Standard
+<img alt="image" src="../images/virtual_wan/32.png" />
+<img alt="image" src="../images/virtual_wan/25.png" />
+<img alt="image" src="../images/virtual_wan/26.png" />
+<img alt="image" src="../images/virtual_wan/27.png" />
+<img alt="image" src="../images/virtual_wan/28.png" /></li>
+</ul>
+<h3 id="step-3-create-hub"><hr/> Step 3 : create HUB</h3>
+<ul>
+<li>Name : pyHub</li>
+<li>Hub private address space : &lt;10.3.0.0/16&gt;</li>
+<li>is The hub's address range in CIDR notation.</li>
+<li>its like a VNET so we need to provide an IP range for it, which has to be unique</li>
+<li>Virtual Hub Capacity : </li>
+<li>means how many VMS in total the hub can handle</li>
+<li>Hub Routing Prference:</li>
+<li>its VPN or</li>
+<li>ExpressRoute</li>
+</ul>
+<p><img alt="image" src="../images/virtual_wan/33.png" />
+<img alt="image" src="../images/virtual_wan/29.png" />
+<img alt="image" src="../images/virtual_wan/30.png" /></p>
+<h3 id="step-4-create-virtual-network-connection"><hr/> step 4 : create Virtual Network Connection</h3>
+<ul>
+<li>Name : PyWAN-VNET1</li>
+<li>Name : PyWAN-VNET2
+<img alt="image" src="../images/virtual_wan/34.png" />
+<img alt="image" src="../images/virtual_wan/35.png" />
+<img alt="image" src="../images/virtual_wan/36.png" />
+<img alt="image" src="../images/virtual_wan/37.png" />
+<img alt="image" src="../images/virtual_wan/38.png" /></li>
+</ul>
+<h3 id="step-5-user-vpn-configuration"></hr> step 5 : User VPN Configuration</h3>
+<ul>
+<li>first create root and child Certificate</li>
+<li>generate certificate : https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-certificates-point-to-site
+<img alt="image" src="../images/virtual_wan/76.png" />
+<img alt="image" src="../images/virtual_wan/41.png" />
+<img alt="image" src="../images/virtual_wan/42.png" />
+<img alt="image" src="../images/virtual_wan/43.png" />
+<img alt="image" src="../images/virtual_wan/44.png" />
+<img alt="image" src="../images/virtual_wan/45.png" />
+<img alt="image" src="../images/virtual_wan/46.png" />
+<img alt="image" src="../images/virtual_wan/47.png" />
+<img alt="image" src="../images/virtual_wan/48.png" />
+<img alt="image" src="../images/virtual_wan/49.png" />
+<img alt="image" src="../images/virtual_wan/50.png" />
+<img alt="image" src="../images/virtual_wan/51.png" />
+<img alt="image" src="../images/virtual_wan/52.png" />
+<img alt="image" src="../images/virtual_wan/53.png" />
+<img alt="image" src="../images/virtual_wan/54.png" />
+<img alt="image" src="../images/virtual_wan/55.png" />
+<img alt="image" src="../images/virtual_wan/56.png" />
+<img alt="image" src="../images/virtual_wan/57.png" />
+<img alt="image" src="../images/virtual_wan/58.png" />
+<img alt="image" src="../images/virtual_wan/59.png" />
+<img alt="image" src="../images/virtual_wan/60.png" />
+<img alt="image" src="../images/virtual_wan/61.png" />
+<img alt="image" src="../images/virtual_wan/62.png" />
+<img alt="image" src="../images/virtual_wan/63.png" />
+<img alt="image" src="../images/virtual_wan/64.png" />
+<img alt="image" src="../images/virtual_wan/65.png" />
+<img alt="image" src="../images/virtual_wan/66.png" />
+<img alt="image" src="../images/virtual_wan/67.png" />
+<img alt="image" src="../images/virtual_wan/68.png" />
+<img alt="image" src="../images/virtual_wan/69.png" />
+<img alt="image" src="../images/virtual_wan/70.png" /></li>
+</ul>
+<h3 id="step-6-user-vpn-configuration-will-only-work-once-we-have-gateway-created"><hr/> Step 6 : User VPN configuration will only work once we have Gateway created</h3>
+<ul>
+<li>go to Virtual WAN =&gt; Hub =&gt; User VPN (Point to Site) =&gt; Create User VPN Gateway</li>
+<li>you need to mention client address pool : &lt;172.16.0.0/16&gt;
+<img alt="image" src="../images/virtual_wan/77.png" />
+<img alt="image" src="../images/virtual_wan/71.png" />
+<img alt="image" src="../images/virtual_wan/73.png" />
+<img alt="image" src="../images/virtual_wan/74.png" />
+<img alt="image" src="../images/virtual_wan/75.png" /></li>
+</ul>
+<h3 id="step-7-download-virtual-wan-user-vpn-profile"><hr/> step 7 : Download virtual WAN user VPN profile</h3>
+<p><img alt="image" src="../images/virtual_wan/78.png" />
+<img alt="image" src="../images/virtual_wan/79.png" /></p>
+<h3 id="completed"><hr/> completed</h3>
+<p><img alt="image" src="../images/virtual_wan/77.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
