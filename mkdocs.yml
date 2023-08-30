@@ -15,7 +15,7 @@ nav:
                 Site to Site VPN Connection: learning/azure/virtual_networking/site-to-site.md
                 Virtual WAN: learning/azure/virtual_networking/virtual_WAN.md
                 ExpressRoute: learning/azure/virtual_networking/express_route.md
-                User Defined Routes: learning/azure/virtual_networking/user_defined_routes.md.md
+                User Defined Routes: learning/azure/virtual_networking/user_defined_routes.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:
