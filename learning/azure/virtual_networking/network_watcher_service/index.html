@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://pycloudworld.github.io/webpages/programming/design_patterns/creational_patterns/factory_method/">
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/virtual_networking/network_watcher_service/">
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Factory Method - PyCloudWorld</title>
+        <title>Network Watcher Service - PyCloudWorld</title>
         <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -49,7 +49,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../../learning/azure/compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
 </li>
     </ul>
   </li>
@@ -59,39 +59,39 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+    <a href="../network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/virtual_network/" class="dropdown-item">Virtual Network</a>
+    <a href="../virtual_network/" class="dropdown-item">Virtual Network</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/network_security_group/" class="dropdown-item">Network Security Group</a>
+    <a href="../network_security_group/" class="dropdown-item">Network Security Group</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/application_security_group/" class="dropdown-item">Application Security Group</a>
+    <a href="../application_security_group/" class="dropdown-item">Application Security Group</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/site-to-site/" class="dropdown-item">Site to Site VPN Connection</a>
+    <a href="../site-to-site/" class="dropdown-item">Site to Site VPN Connection</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/virtual_WAN/" class="dropdown-item">Virtual WAN</a>
+    <a href="../virtual_WAN/" class="dropdown-item">Virtual WAN</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/express_route.md" class="dropdown-item">ExpressRoute</a>
+    <a href="../express_route.md" class="dropdown-item">ExpressRoute</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/user_defined_routes/" class="dropdown-item">User Defined Routes</a>
+    <a href="../user_defined_routes/" class="dropdown-item">User Defined Routes</a>
 </li>
             
 <li>
-    <a href="../../../../learning/azure/virtual_networking/azure_firewall_service/" class="dropdown-item">Azure Firewall Service</a>
+    <a href="../azure_firewall_service/" class="dropdown-item">Azure Firewall Service</a>
 </li>
     </ul>
   </li>
@@ -99,7 +99,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -112,23 +112,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../singleton/" class="dropdown-item">Singleton</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="../builder/" class="dropdown-item">Builder</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/builder/" class="dropdown-item">Builder</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Factory Method</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
 </li>
             
 <li>
-    <a href="../prototype/" class="dropdown-item">Prototype</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/prototype/" class="dropdown-item">Prototype</a>
 </li>
             
 <li>
-    <a href="../abstract_factory/" class="dropdown-item">Abstract Factory</a>
+    <a href="../../../../programming/design_patterns/creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
 </li>
     </ul>
   </li>
@@ -138,11 +138,11 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../structural_patterns/adapter/" class="dropdown-item">Adapter</a>
+    <a href="../../../../programming/design_patterns/structural_patterns/adapter/" class="dropdown-item">Adapter</a>
 </li>
             
 <li>
-    <a href="../../structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+    <a href="../../../../programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
 </li>
     </ul>
   </li>
@@ -158,16 +158,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../builder/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../prototype/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -186,8 +176,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">CODE</a>
+            <li class="nav-item" data-level="1"><a href="#network-watcher-service" class="nav-link">Network Watcher Service</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#virtual-wan" class="nav-link">Virtual WAN</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -195,51 +189,33 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>f# Factory Method
-<img alt="factory_method" src="../images/factory_method.PNG" /></p>
-<h2 id="code">CODE</h2>
-<pre><code class="language-python">from __future__ import annotations
-from abc import ABC, abstractmethod
-
-
-class Transport(ABC):
-
-    @abstractmethod
-    def cost(self) -&gt; str:
-        pass
-
-class RailTransport(Transport):
-
-    def cost(self) -&gt; str:
-        return &quot;Rail Transport cost Rs 1000&quot;
-
-
-class AirTransport(Transport):
-    def cost(self) -&gt; str:
-        return &quot;Air Transport cost Rs 4000&quot;
-
-class SeaTransport(Transport):
-    def cost(self) -&gt; str:
-        return &quot;Sea Transport cost Rs 200&quot;
-
-class TransportFactory():
-   def create(self, typ):
-      targetclass = typ.capitalize()
-      return globals()[targetclass]()
-
-if __name__ == &quot;__main__&quot;:
-    transport_factory = TransportFactory()
-    transports = ['airtransport', 'railtransport', 'seatransport']
-    for transport in transports:
-        transport_obj = transport_factory.create(transport)
-        if hasattr(transport_obj, &quot;cost&quot;):
-           print(transport_obj.cost())
-</code></pre>
-<p>Output.txt: Execution result</p>
-<pre><code class="language-bash">Air Transport cost Rs 4000
-Rail Transport cost Rs 1000
-Sea Transport cost Rs 200
-</code></pre></div>
+<h1 id="network-watcher-service">Network Watcher Service</h1>
+<h2 id="virtual-wan"><hr/>Virtual WAN</h2>
+<ul>
+<li>Connection Monitor</li>
+<li>check network connectivity between machines</li>
+<li>these can be in azure or on ur on premises environment</li>
+<li>Next Hop</li>
+<li>here you can see the next route for a packet of data</li>
+<li>understand whether the packet is being routed to the correct destination</li>
+<li>IP Flow verify </li>
+<li>check if a packet is allowed or denied to or from a virtual machine</li>
+<li>if a packet is denied by NSG, you can see which rule is denying the packet</li>
+<li>Connection Troubleshoot</li>
+<li>check connection from a vm to <ul>
+<li>another vm</li>
+<li>fully qualified domain name </li>
+<li>URI or IPv4 address</li>
+</ul>
+</li>
+<li>NSG Diagnostic</li>
+<li>Provides detailed info that helps to understand </li>
+<li>debug the security configuration of the network</li>
+<li>Traffic Analytics</li>
+<li>helps to log info about the IP traffic that is flowing through an NSG</li>
+<li>NSG Flow Logs</li>
+<li>helps to provide visibility into user and application activity in cloud networks</li>
+</ul></div>
             </div>
         </div>
 
