@@ -16,6 +16,7 @@ nav:
                 Virtual WAN: learning/azure/virtual_networking/virtual_WAN.md
                 ExpressRoute: learning/azure/virtual_networking/express_route.md
                 User Defined Routes: learning/azure/virtual_networking/user_defined_routes.md
+                Azure Firewall Service: learning/azure/virtual_networking/azure_firewall_service.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:
