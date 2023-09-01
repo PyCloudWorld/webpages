@@ -220,6 +220,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#step-7-stop-the-tracffic-flowing-outside" class="nav-link"> Step 7: stop the tracffic flowing outside.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#step-8-allow-access-to-some-applications-on-internet" class="nav-link"> Step 8: allow access to some applications on internet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -279,7 +287,31 @@
 <h2 id="step-6-try-connecting"><hr/> step 6: try connecting</h2>
 <p><img alt="image" src="../images/azure_firewall_service/28.png" />
 <img alt="image" src="../images/azure_firewall_service/29.png" />
-<img alt="image" src="../images/azure_firewall_service/30.png" /></p></div>
+<img alt="image" src="../images/azure_firewall_service/30.png" /></p>
+<h2 id="step-7-stop-the-tracffic-flowing-outside"><hr/> Step 7: stop the tracffic flowing outside.</h2>
+<ul>
+<li>the user from windowsB can still connect to internet</li>
+<li>create RouteTable</li>
+<li>Associate the RouteTable to Subnet of windowB</li>
+<li>Route the Subnet traffic to AzureFirewall Private IP
+<img alt="image" src="../images/azure_firewall_service/31.png" />
+<img alt="image" src="../images/azure_firewall_service/32.png" />
+<img alt="image" src="../images/azure_firewall_service/33.png" />
+<img alt="image" src="../images/azure_firewall_service/34.png" />
+<img alt="image" src="../images/azure_firewall_service/35.png" />
+<img alt="image" src="../images/azure_firewall_service/36.png" />
+<img alt="image" src="../images/azure_firewall_service/37.png" />
+<img alt="image" src="../images/azure_firewall_service/38.png" />
+<img alt="image" src="../images/azure_firewall_service/39.png" /></li>
+</ul>
+<h2 id="step-8-allow-access-to-some-applications-on-internet"><hr/> Step 8: allow access to some applications on internet</h2>
+<ul>
+<li>example www.microsoft.com</li>
+<li>this can be done by application rules in the AzurePolicy
+<img alt="image" src="../images/azure_firewall_service/41.png" />
+<img alt="image" src="../images/azure_firewall_service/42.png" />
+<img alt="image" src="../images/azure_firewall_service/43.png" /></li>
+</ul></div>
             </div>
         </div>
 
