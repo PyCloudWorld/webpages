@@ -1,5 +1,5 @@
 # Abstract Factory
-![abstract_factory](images/abstract_factory.PNG)
+![abstract_factory](images/abstract_factory.png)
 
 ## CODE
 ```python

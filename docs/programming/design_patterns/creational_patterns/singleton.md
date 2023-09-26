@@ -1,5 +1,5 @@
 # Singleton
-![singleton](images/singleton.PNG)
+![singleton](images/singleton.png)
 ## CODE
 ```python
 class SingletonMeta(type):

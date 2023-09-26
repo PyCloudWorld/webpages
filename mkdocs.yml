@@ -19,6 +19,15 @@ nav:
                 Azure Firewall Service: learning/azure/virtual_networking/azure_firewall_service.md
             Azure Storage:
                 What are storage accounts: learning/azure/azure_storage/what_are_storage_accounts.md
+            Azure Manage Identities And Governance:
+                azure_subscriptions: learning/azure/manage_azure_identities_and_governance/azure_subscriptions.md
+                custom_ad_roles: learning/azure/manage_azure_identities_and_governance/custom_ad_roles.md
+                VM_RBAC_rules: learning/azure/manage_azure_identities_and_governance/VM_RBAC_rules.md
+                add_vm_to_ad: learning/azure/manage_azure_identities_and_governance/add_vm_to_ad.md
+                azure_ad_custom_domains: learning/azure/manage_azure_identities_and_governance/azure_ad_custom_domains.md
+                assigning_azure_ad_roles: learning/azure/manage_azure_identities_and_governance/assigning_azure_ad_roles.md
+                dynamic_group: learning/azure/manage_azure_identities_and_governance/dynamic_group.md
+                storage_account_role: learning/azure/manage_azure_identities_and_governance/storage_account_role.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:

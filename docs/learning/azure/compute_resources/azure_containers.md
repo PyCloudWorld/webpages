@@ -1,6 +1,6 @@
 # Azure Container
 
-![docker](docker.PNG)
+![docker](docker.png)
 ## Commands to install on ubuntu
 Update the package index
 ```bash
@@ -48,6 +48,6 @@ sudo docker run --name mynginx -p 80:80 -d nginx
 # Azure Container Registry
 this is the place where we save our images for the organisation. this will be a private repo to save the container images.
 
-![azure_container_registry](container_registry_in_azure.PNG)
+![azure_container_registry](container_registry_in_azure.png)
 
-![azure_container_registry_form](azure_container_registry_form.PNG)
+![azure_container_registry_form](azure_container_registry_form.png)

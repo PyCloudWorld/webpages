@@ -1,5 +1,5 @@
 f# Factory Method
-![factory_method](images/factory_method.PNG)
+![factory_method](images/factory_method.png)
 
 ## CODE
 

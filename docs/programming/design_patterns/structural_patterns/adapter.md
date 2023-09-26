@@ -1,12 +1,12 @@
 # Adapter
 ## <hr/>
-![adapter_1](images/adapter_1.PNG)
+![adapter_1](images/adapter_1.png)
 ## <hr/>
-![adapter_2](images/adapter_2.PNG)
+![adapter_2](images/adapter_2.png)
 ## <hr/>
-![adapter_3](images/adapter_3.PNG)
+![adapter_3](images/adapter_3.png)
 ## <hr/>
-![adapter_4](images/adapter_4.PNG)
+![adapter_4](images/adapter_4.png)
 ## <hr/>
 
 ## CODE

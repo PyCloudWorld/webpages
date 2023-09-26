@@ -1,5 +1,5 @@
 # Prototype
-![prototype](images/prototype.PNG)
+![prototype](images/prototype.png)
 
 ## CODE
 ```python
