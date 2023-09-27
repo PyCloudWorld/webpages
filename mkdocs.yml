@@ -19,7 +19,7 @@ nav:
                 Azure Firewall Service: learning/azure/virtual_networking/azure_firewall_service.md
             Azure Storage:
                 What are storage accounts: learning/azure/azure_storage/what_are_storage_accounts.md
-            Azure Manage Identities And Governance:
+            Azure Manage Identities And Governance(44 lectures):
                 azure_subscriptions: learning/azure/manage_azure_identities_and_governance/azure_subscriptions.md
                 custom_ad_roles: learning/azure/manage_azure_identities_and_governance/custom_ad_roles.md
                 VM_RBAC_rules: learning/azure/manage_azure_identities_and_governance/VM_RBAC_rules.md
@@ -28,6 +28,9 @@ nav:
                 assigning_azure_ad_roles: learning/azure/manage_azure_identities_and_governance/assigning_azure_ad_roles.md
                 dynamic_group: learning/azure/manage_azure_identities_and_governance/dynamic_group.md
                 storage_account_role: learning/azure/manage_azure_identities_and_governance/storage_account_role.md
+            Monitor and Backup Resources:
+                1 what_is_monitoring : learning/azure/monitor_and_backup_resources/1_what_is_monitoring.md
+                2 quick_look_at_azure_monitoring : learning/azure/monitor_and_backup_resources/2_quick_look_at_azure_monitoring
     - Programming:
         Design Patterns:
             Creational Design Patterns:
