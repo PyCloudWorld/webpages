@@ -95,6 +95,72 @@
 </li>
     </ul>
   </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure Storage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../learning/azure/azure_storage/what_are_storage_accounts/" class="dropdown-item">What are storage accounts</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure Manage Identities And Governance(44 lectures)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/azure_subscriptions/" class="dropdown-item">azure_subscriptions</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/custom_ad_roles/" class="dropdown-item">custom_ad_roles</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/VM_RBAC_rules/" class="dropdown-item">VM_RBAC_rules</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/add_vm_to_ad/" class="dropdown-item">add_vm_to_ad</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/azure_ad_custom_domains/" class="dropdown-item">azure_ad_custom_domains</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/assigning_azure_ad_roles/" class="dropdown-item">assigning_azure_ad_roles</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/dynamic_group/" class="dropdown-item">dynamic_group</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/manage_azure_identities_and_governance/storage_account_role/" class="dropdown-item">storage_account_role</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Monitor and Backup Resources</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../learning/azure/monitor_and_backup_resources/1_what_is_monitoring/" class="dropdown-item">1 what_is_monitoring</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/monitor_and_backup_resources/2_quick_look_at_azure_monitoring/" class="dropdown-item">2 quick_look_at_azure_monitoring</a>
+</li>
+            
+<li>
+    <a href="../../../../learning/azure/monitor_and_backup_resources/3_alerts/" class="dropdown-item">3 alerts</a>
+</li>
+    </ul>
+  </li>
     </ul>
   </li>
                                 </ul>
@@ -210,11 +276,11 @@
 <h1 id="proxy">Proxy</h1>
 <h2 id="problem">Problem</h2>
 <p>Why would you want to control access to an object? Here is an example: you have a massive object that consumes a vast amount of system resources. You need it from time to time, but not always.</p>
-<p><img alt="proxy_1" src="../images/proxy_1.png" /></p>
+<p><img alt="proxy_1" src="images/proxy_1.png" /></p>
 <p>You could implement lazy initialization: create this object only when it’s actually needed. All of the object’s clients would need to execute some deferred initialization code. Unfortunately, this would probably cause a lot of code duplication.</p>
 <h2 id="solution">Solution</h2>
 <p>The Proxy pattern suggests that you create a new proxy class with the same interface as an original service object. Then you update your app so that it passes the proxy object to all of the original object’s clients. Upon receiving a request from a client, the proxy creates a real service object and delegates all the work to it.</p>
-<p><img alt="proxy_2" src="../images/proxy_2.png" /></p>
+<p><img alt="proxy_2" src="images/proxy_2.png" /></p>
 <p>But what’s the benefit? If you need to execute something either before or after the primary logic of the class, the proxy lets you do this without changing that class. Since the proxy implements the same interface as the original class, it can be passed to any client that expects a real service object.</p>
 <h2 id="code">CODE</h2>
 <pre><code class="language-python">from abc import ABC, abstractmethod

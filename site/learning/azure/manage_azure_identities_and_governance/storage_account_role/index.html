@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/manage_azure_identities_and_governance/storage_account_role/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>storage_account_role - PyCloudWorld</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">PyCloudWorld</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../about.md" class="nav-link">About</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Compute Resources</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Virtual Networking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/virtual_network/" class="dropdown-item">Virtual Network</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/network_security_group/" class="dropdown-item">Network Security Group</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/application_security_group/" class="dropdown-item">Application Security Group</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/site-to-site/" class="dropdown-item">Site to Site VPN Connection</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/virtual_WAN/" class="dropdown-item">Virtual WAN</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/express_route.md" class="dropdown-item">ExpressRoute</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/user_defined_routes/" class="dropdown-item">User Defined Routes</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/azure_firewall_service/" class="dropdown-item">Azure Firewall Service</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure Storage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../azure_storage/what_are_storage_accounts/" class="dropdown-item">What are storage accounts</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure Manage Identities And Governance(44 lectures)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../azure_subscriptions/" class="dropdown-item">azure_subscriptions</a>
+</li>
+            
+<li>
+    <a href="../custom_ad_roles/" class="dropdown-item">custom_ad_roles</a>
+</li>
+            
+<li>
+    <a href="../VM_RBAC_rules/" class="dropdown-item">VM_RBAC_rules</a>
+</li>
+            
+<li>
+    <a href="../add_vm_to_ad/" class="dropdown-item">add_vm_to_ad</a>
+</li>
+            
+<li>
+    <a href="../azure_ad_custom_domains/" class="dropdown-item">azure_ad_custom_domains</a>
+</li>
+            
+<li>
+    <a href="../assigning_azure_ad_roles/" class="dropdown-item">assigning_azure_ad_roles</a>
+</li>
+            
+<li>
+    <a href="../dynamic_group/" class="dropdown-item">dynamic_group</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">storage_account_role</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Monitor and Backup Resources</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../monitor_and_backup_resources/1_what_is_monitoring/" class="dropdown-item">1 what_is_monitoring</a>
+</li>
+            
+<li>
+    <a href="../../monitor_and_backup_resources/2_quick_look_at_azure_monitoring/" class="dropdown-item">2 quick_look_at_azure_monitoring</a>
+</li>
+            
+<li>
+    <a href="../../monitor_and_backup_resources/3_alerts/" class="dropdown-item">3 alerts</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Design Patterns</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creational Design Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/prototype/" class="dropdown-item">Prototype</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Structural Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../programming/design_patterns/structural_patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../dynamic_group/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../monitor_and_backup_resources/1_what_is_monitoring/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#azure-subscription" class="nav-link">Azure Subscription</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#azure-subscription_1" class="nav-link">Azure Subscription</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#azure-active-directory" class="nav-link">Azure Active Directory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mapping-between-subscription-and-ad" class="nav-link">mapping between Subscription and AD</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-to-change-the-directory-for-any-subscription" class="nav-link">how to change the directory for any subscription</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-a-new-user-in-azure-active-directory" class="nav-link">create a  new user in azure active directory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-storage-account-by-main-user-and-give-reader-access-to-usera" class="nav-link">create storage account by Main User  and give Reader Access to UserA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#provide-acces-at-resource-group-level" class="nav-link">provide acces at Resource Group Level</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#difference" class="nav-link">Difference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-custom-role" class="nav-link">create custom role</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="azure-subscription">Azure Subscription</h1>
+<p>when you create azure account you get 2 things
+* Azure Subscription 
+* Azure Active Directory</p>
+<h2 id="azure-subscription_1">Azure Subscription</h2>
+<p>Azure Subscriptions is for billing </p>
+<h2 id="azure-active-directory">Azure Active Directory</h2>
+<ul>
+<li>Azure Active Directory is where you handle users and their identities. </li>
+<li>also the identities of your applications</li>
+</ul>
+<h2 id="mapping-between-subscription-and-ad">mapping between Subscription and AD</h2>
+<ul>
+<li>one Azure Subscription can only be mapped to one AD Account.</li>
+<li>one Azure Active Directory can be mapped to more than one Azure Subscription account</li>
+<li><img alt="image_1" src="../images/azure_subscriptions/1.png" /></li>
+<li><img alt="image_2" src="../images/azure_subscriptions/2.png" /></li>
+</ul>
+<h2 id="how-to-change-the-directory-for-any-subscription">how to change the directory for any subscription</h2>
+<ul>
+<li><img alt="image_3" src="../images/azure_subscriptions/3.png" /></li>
+</ul>
+<h2 id="create-a-new-user-in-azure-active-directory">create a  new user in azure active directory</h2>
+<ul>
+<li><img alt="image_5" src="../images/azure_subscriptions/5.png" /></li>
+<li><img alt="image_6" src="../images/azure_subscriptions/6.png" /></li>
+<li><img alt="image_7" src="../images/azure_subscriptions/7.png" /></li>
+<li><img alt="image_8" src="../images/azure_subscriptions/8.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/9.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/10.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/11.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/12.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/13.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/14.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/15.png" /></li>
+<li><img alt="image_" src="../images/azure_subscriptions/16.png" /></li>
+</ul>
+<h2 id="create-storage-account-by-main-user-and-give-reader-access-to-usera">create storage account by Main User <ashish> and give Reader Access to UserA</h2>
+<h3 id="create-storage-account">create Storage Account</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/17.png" />
+<img alt="image_" src="../images/azure_subscriptions/18.png" />
+<img alt="image_" src="../images/azure_subscriptions/19.png" />
+<img alt="image_" src="../images/azure_subscriptions/20.png" />
+<img alt="image_" src="../images/azure_subscriptions/21.png" />
+<img alt="image_" src="../images/azure_subscriptions/22.png" />
+<img alt="image_" src="../images/azure_subscriptions/23.png" />
+<img alt="image_" src="../images/azure_subscriptions/24.png" />
+<img alt="image_" src="../images/azure_subscriptions/25.png" />
+<img alt="image_" src="../images/azure_subscriptions/26.png" />
+<img alt="image_" src="../images/azure_subscriptions/27.png" />
+<img alt="image_" src="../images/azure_subscriptions/28.png" />
+<img alt="image_" src="../images/azure_subscriptions/29.png" />
+<img alt="image_" src="../images/azure_subscriptions/30.png" />
+<img alt="image_" src="../images/azure_subscriptions/31.png" />
+<img alt="image_" src="../images/azure_subscriptions/32.png" />
+<img alt="image_" src="../images/azure_subscriptions/33.png" />
+<img alt="image_" src="../images/azure_subscriptions/34.png" />
+<img alt="image_" src="../images/azure_subscriptions/35.png" />
+<img alt="image_" src="../images/azure_subscriptions/36.png" /></p>
+<h3 id="check-if-the-usera-have-access-it-should-not-be-able-to-access">check if the userA have access, it should not be able to access</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/37.png" /></p>
+<h3 id="grant-access-at-storage-level-reader-access-only">grant access at storage level (reader access only)</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/38.png" />
+<img alt="image_" src="../images/azure_subscriptions/39.png" />
+<img alt="image_" src="../images/azure_subscriptions/40.png" />
+<img alt="image_" src="../images/azure_subscriptions/41.png" />
+<img alt="image_" src="../images/azure_subscriptions/42.png" />
+<img alt="image_" src="../images/azure_subscriptions/43.png" />
+<img alt="image_" src="../images/azure_subscriptions/44.png" />
+<img alt="image_" src="../images/azure_subscriptions/45.png" />
+<img alt="image_" src="../images/azure_subscriptions/46.png" /></p>
+<h3 id="check-if-the-usera-have-access-it-should-have-access">check if the userA have access, it should have access</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/47.png" />
+<img alt="image_" src="../images/azure_subscriptions/48.png" /></p>
+<h2 id="provide-acces-at-resource-group-level">provide acces at Resource Group Level</h2>
+<h3 id="create-a-vm-in-resource-group-and-create-vm">create a vm in Resource Group and create VM</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/49.png" />
+<img alt="image_" src="../images/azure_subscriptions/50.png" />
+<img alt="image_" src="../images/azure_subscriptions/51.png" />
+<img alt="image_" src="../images/azure_subscriptions/52.png" />
+<img alt="image_" src="../images/azure_subscriptions/53.png" />
+<img alt="image_" src="../images/azure_subscriptions/54.png" />
+<img alt="image_" src="../images/azure_subscriptions/55.png" /></p>
+<h3 id="give-reader-access-to-vm-only">give Reader access to VM only</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/57.png" />
+<img alt="image_" src="../images/azure_subscriptions/58.png" />
+<img alt="image_" src="../images/azure_subscriptions/59.png" />
+<img alt="image_" src="../images/azure_subscriptions/60.png" />
+<img alt="image_" src="../images/azure_subscriptions/61.png" />
+<img alt="image_" src="../images/azure_subscriptions/62.png" />
+<img alt="image_" src="../images/azure_subscriptions/63.png" />
+<img alt="image_" src="../images/azure_subscriptions/64.png" />
+<img alt="image_" src="../images/azure_subscriptions/65.png" /></p>
+<h3 id="check-if-user-can-see-all-components-related-to-vm">check if user can see all components related to VM</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/66.png" />
+<img alt="image_" src="../images/azure_subscriptions/67.png" />
+<img alt="image_" src="../images/azure_subscriptions/68.png" />
+<img alt="image_" src="../images/azure_subscriptions/69.png" /></p>
+<h3 id="give-reader-access-at-resource-group-level">give Reader access at Resource Group Level</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/70.png" />
+<img alt="image_" src="../images/azure_subscriptions/71.png" />
+<img alt="image_" src="../images/azure_subscriptions/72.png" />
+<img alt="image_" src="../images/azure_subscriptions/73.png" />
+<img alt="image_" src="../images/azure_subscriptions/74.png" />
+<img alt="image_" src="../images/azure_subscriptions/75.png" />
+<img alt="image_" src="../images/azure_subscriptions/76.png" />
+<img alt="image_" src="../images/azure_subscriptions/77.png" /></p>
+<h3 id="check-if-user-have-access-and-what-type">check if user have access and  what type</h3>
+<p><img alt="image_" src="../images/azure_subscriptions/78.png" />
+<img alt="image_" src="../images/azure_subscriptions/79.png" />
+<img alt="image_" src="../images/azure_subscriptions/80.png" />
+<img alt="image_" src="../images/azure_subscriptions/81.png" />
+<img alt="image_" src="../images/azure_subscriptions/82.png" /></p>
+<h2 id="difference">Difference</h2>
+<ul>
+<li>Reader</li>
+<li>only read access. cant perform actions</li>
+<li>Contributor</li>
+<li>Read + start stop and perform action. can't provider access to others</li>
+<li>User Access Administrator</li>
+<li>Read + start stop and perform action + can provider access to others</li>
+<li>Owner</li>
+<li>have complete access to start, stop, create, provide access to others</li>
+</ul>
+<h2 id="create-custom-role">create custom role</h2>
+<p><img alt="image_" src="../images/azure_subscriptions/83.png" />
+<img alt="image_" src="../images/azure_subscriptions/84.png" />
+<img alt="image_" src="../images/azure_subscriptions/85.png" />
+<img alt="image_" src="../images/azure_subscriptions/86.png" />
+<img alt="image_" src="../images/azure_subscriptions/87.png" />
+<img alt="image_" src="../images/azure_subscriptions/88.png" />
+<img alt="image_" src="../images/azure_subscriptions/89.png" />
+<img alt="image_" src="../images/azure_subscriptions/90.png" />
+<img alt="image_" src="../images/azure_subscriptions/91.png" />
+<img alt="image_" src="../images/azure_subscriptions/92.png" />
+<img alt="image_" src="../images/azure_subscriptions/93.png" />
+<img alt="image_" src="../images/azure_subscriptions/94.png" />
+<img alt="image_" src="../images/azure_subscriptions/95.png" />
+<img alt="image_" src="../images/azure_subscriptions/96.png" />
+<img alt="image_" src="../images/azure_subscriptions/97.png" />
+<img alt="image_" src="../images/azure_subscriptions/98.png" />
+<img alt="image_" src="../images/azure_subscriptions/99.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

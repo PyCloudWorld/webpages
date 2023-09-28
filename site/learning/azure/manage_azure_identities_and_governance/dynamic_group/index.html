@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://pycloudworld.github.io/webpages/learning/azure/manage_azure_identities_and_governance/dynamic_group/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>dynamic_group - PyCloudWorld</title>
+        <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../../..">PyCloudWorld</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../../../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../../../about.md" class="nav-link">About</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Compute Resources</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../compute_resources/azure_containers/" class="dropdown-item">Azure Containers</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Virtual Networking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../virtual_networking/network_interface_n_cidr_notation/" class="dropdown-item">Network Interface & CIDR Notation</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/virtual_network/" class="dropdown-item">Virtual Network</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/network_security_group/" class="dropdown-item">Network Security Group</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/application_security_group/" class="dropdown-item">Application Security Group</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/site-to-site/" class="dropdown-item">Site to Site VPN Connection</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/virtual_WAN/" class="dropdown-item">Virtual WAN</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/express_route.md" class="dropdown-item">ExpressRoute</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/user_defined_routes/" class="dropdown-item">User Defined Routes</a>
+</li>
+            
+<li>
+    <a href="../../virtual_networking/azure_firewall_service/" class="dropdown-item">Azure Firewall Service</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure Storage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../azure_storage/what_are_storage_accounts/" class="dropdown-item">What are storage accounts</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Azure Manage Identities And Governance(44 lectures)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../azure_subscriptions/" class="dropdown-item">azure_subscriptions</a>
+</li>
+            
+<li>
+    <a href="../custom_ad_roles/" class="dropdown-item">custom_ad_roles</a>
+</li>
+            
+<li>
+    <a href="../VM_RBAC_rules/" class="dropdown-item">VM_RBAC_rules</a>
+</li>
+            
+<li>
+    <a href="../add_vm_to_ad/" class="dropdown-item">add_vm_to_ad</a>
+</li>
+            
+<li>
+    <a href="../azure_ad_custom_domains/" class="dropdown-item">azure_ad_custom_domains</a>
+</li>
+            
+<li>
+    <a href="../assigning_azure_ad_roles/" class="dropdown-item">assigning_azure_ad_roles</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">dynamic_group</a>
+</li>
+            
+<li>
+    <a href="../storage_account_role/" class="dropdown-item">storage_account_role</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Monitor and Backup Resources</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../monitor_and_backup_resources/1_what_is_monitoring/" class="dropdown-item">1 what_is_monitoring</a>
+</li>
+            
+<li>
+    <a href="../../monitor_and_backup_resources/2_quick_look_at_azure_monitoring/" class="dropdown-item">2 quick_look_at_azure_monitoring</a>
+</li>
+            
+<li>
+    <a href="../../monitor_and_backup_resources/3_alerts/" class="dropdown-item">3 alerts</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Design Patterns</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Creational Design Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/factory_method/" class="dropdown-item">Factory Method</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/prototype/" class="dropdown-item">Prototype</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/creational_patterns/abstract_factory/" class="dropdown-item">Abstract Factory</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Structural Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../../programming/design_patterns/structural_patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../../../programming/design_patterns/structural_patterns/proxy/" class="dropdown-item">Proxy</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../assigning_azure_ad_roles/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../storage_account_role/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#dynamic-group" class="nav-link">Dynamic Group</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="dynamic-group">Dynamic Group</h1>
+<ul>
+<li></li>
+<li><img alt="image_1" src="../images/dynamic_group/1.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/2.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/3.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/4.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/5.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/6.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/7.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/8.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/9.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/10.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/11.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/12.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/13.png" /></li>
+<li><img alt="image_1" src="../images/dynamic_group/14.png" /></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../../js/jquery-3.6.0.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../../js/base.js"></script>
+        <script src="../../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
