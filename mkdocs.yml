@@ -32,6 +32,15 @@ nav:
                 1 what_is_monitoring : learning/azure/monitor_and_backup_resources/1_what_is_monitoring.md
                 2 quick_look_at_azure_monitoring : learning/azure/monitor_and_backup_resources/2_quick_look_at_azure_monitoring.md
                 3 alerts : learning/azure/monitor_and_backup_resources/3_alerts.md
+                4_log_analystics_workpace_installation : learning/azure/monitor_and_backup_resources/4_log_analystics_workpace_installation.md
+                5 connecting_vm_to_workspace : learning/azure/monitor_and_backup_resources/5_connecting_vm_to_workspace.md
+                6_add_another_vm_to_already_existing_log_analystic_workspaces : learning/azure/monitor_and_backup_resources/6_add_another_vm_to_already_existing_log_analystic_workspace.md
+                7_log_analystic_queries : learning/azure/monitor_and_backup_resources/7_log_analystic_queries.md
+                8_log_analystic_workspace_alert : learning/azure/monitor_and_backup_resources/8_log_analystic_workspace_alert.md
+                9_azure_vm_insights : learning/azure/monitor_and_backup_resources/9_azure_vm_insights.md
+                10_sending_custom_logs_to_log_analystics : learning/azure/monitor_and_backup_resources/10_sending_custom_logs_to_log_analystics.md
+                11_azure_vm_backup : learning/azure/monitor_and_backup_resources/11_azure_vm_backup.md
+                12_azure_backup_file_restore : learning/azure/monitor_and_backup_resources/12_azure_backup_file_restore.md
     - Programming:
         Design Patterns:
             Creational Design Patterns:
